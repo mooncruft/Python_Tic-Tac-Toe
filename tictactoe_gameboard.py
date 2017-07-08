@@ -32,9 +32,8 @@ board = [
 #we reuse this code a lot so we make it a function
 def choose():
     choice = int(input("Pick a place to start (1-9)"))
-
     
-    if(board[choice] > 0:
+    if(board[choice] > 0):
         print("This has already been picked.... Please pick another")
         choose()
     else:
@@ -43,10 +42,9 @@ def choose():
 
 #Give the player an Enemy
 def computerChoice():
-    #a random number between 1 and 9
-    choice = random.randint(1,9)
+    choice = random.randint(1,9)#a random number between 1 and 9
 
-    if(board[choice] > 0: #computer picks a box already choosen
+    if(board[choice] > 0):          #computer picks a box already choosen
        choice = random.randint(1,9) #try again
 
     else:
@@ -54,4 +52,6 @@ def computerChoice():
 
 #Will handle showing the modified board to the user
 def drawBoard(player,choice):
-       print("Player: " + player + ", Chose: " + choice)
+    print("Draw Board - Player: " + str(player) + ", Choice: " + str(choice))
+
+choose()
